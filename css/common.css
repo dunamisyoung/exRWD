@@ -212,14 +212,25 @@ legend,
   display: flex;
   flex-flow: row wrap;
 }
+
 .appFooter {
   width: 100%;
 }
 
 /* 공통 헤더 */
 .appHeader {
+  display: grid;
   background-color: silver;
+  grid-template: auto/ 1fr;
 }
+
+/* 공통 멤버 링크 */
+.memberOnly {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+}
+
 /* 공통 내비게이션 */
 .appNavigation {
   background-color: purple;

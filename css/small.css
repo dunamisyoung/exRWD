@@ -10,6 +10,42 @@ body {
 }
 /* 모바일 헤더 */
 .appHeader {
+  grid-template: auto / 1fr;
+  background-color: #38302e;
+}
+
+.brand,
+.memberOnly,
+.searchForm {
+  padding: 10px 20px;
+}
+/* 모바일 브랜드 */
+/* 모바일 멤버 링크 */
+.memberOnly {
+  order: -1;
+  background-color: #988574;
+  color: #fff;
+}
+/* 모바일 브랜드 */
+.brand * {
+  display: block;
+}
+/* 모바일 검색 폼 */
+input[type='search'] {
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 2px 5px;
+  height: 35px;
+  width: calc(100% - 45px);
+  margin-right: 5px;
+  vertical-align: bottom;
+}
+
+.buttonSearch {
+  width: 35px;
+  height: 35px;
+  border: 0;
+  padding: 0;
 }
 /* 모바일 내비게이션 */
 .appNavigation {
