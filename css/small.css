@@ -60,17 +60,80 @@ input[type='search'] {
   background-position: center center; */
 }
 /* 모바일 내비게이션 */
-.appNavigation {
+
+/* 모바일 메뉴 제어 버튼 */
+.buttonBurger {
+  width: 40px;
+  height: 35px;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  overflow: hidden;
+  transition: all 200ms ease-in-out;
+}
+
+.burgerBar {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background-color: #fff;
+}
+
+.round {
+  border-radius: 20px;
+}
+
+.positionTop {
+  top: 0;
+}
+
+.positionMiddle {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.positionBottom {
+  top: 100%;
+  transform: translateY(-100%);
+}
+
+.isAct .positionTop {
+  transform: translateY(-50%) rotate(45deg);
+  top: 50%;
+}
+.isAct .positionMiddle {
+  transform: translateY(-50%) translateX(-105%);
+  transition: all 0.5s;
+  top: 50%;
+}
+.isAct .positionBottom {
+  transform: translateY(-50%) rotate(-45deg);
+  transition: all 0.5s;
+  top: 50%;
+}
+
+.menu__list {
   position: fixed;
   top: 0;
   left: 0;
-  transform: translateX(-100%);
   width: 70vw;
   height: 100vh;
+  transform: translateX(-100%);
 }
 /* 모바일 메인 콘텐츠 */
 .appMain {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0 20px;
 }
+
+.appMain section,
+.appMain article {
+  width: 100%;
+  height: 10vh;
+}
+
 /* 모바일 푸터 */
 .appFooter {
 }

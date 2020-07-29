@@ -243,14 +243,27 @@ input[type='search'] {
   vertical-align: bottom;
 }
 
-/* 공통 내비게이션 */
-.appNavigation {
-  background-color: purple;
-}
 /* 공통 메인 콘텐츠 */
 .appMain {
   background-color: lime;
 }
+
+.book {
+  background-color: orangered;
+}
+.news {
+  background-color: green;
+}
+.board {
+  background-color: dodgerblue;
+}
+.favorite {
+  background-color: powderblue;
+}
+.twitter {
+  background-color: palegoldenrod;
+}
+
 /* 공통 푸터 */
 .appFooter {
   background-color: orange;

@@ -28,7 +28,8 @@ body {
   justify-content: center;
 }
 .appHeader,
-.appMain {
+.appMain,
+.menu__list {
   width: 1000px;
 }
 
@@ -70,4 +71,69 @@ body {
   padding: 2px 10px;
   background-color: #988574;
   color: #fff;
+}
+
+/* 데스크탑 내비게이션 */
+.appNavigation {
+  background-color: #988574;
+  box-shadow: 0 -2px 2px 0 #ccc, 0 2px 2px 0 #ccc;
+}
+
+.menu__list {
+  margin-left: auto;
+  margin-right: auto;
+  grid-template: auto / repeat(5, 1fr);
+  grid-gap: 20px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  display: grid;
+  color: #fff;
+}
+
+.menu__link {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 0 #000, -1px -1px 0 #000;
+}
+
+.menu__subMenu li {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.buttonBuger {
+  display: none;
+}
+
+/* 데스크탑 메인 콘텐츠 */
+
+.appMain {
+  width: 1000px;
+  display: grid;
+  grid-template: repeat(2, 25vh) / repeat(12, 1fr);
+  grid-gap: 20px;
+}
+
+/* 데스크탑 추천 서적 */
+.book {
+  grid-area: 1/1/2 / span 4;
+}
+
+/* 데스크탑 새소식 */
+.news {
+  grid-area: 1/5/2 / span 8;
+}
+
+/* 데스크탑 게시판 */
+.board {
+  grid-area: 2/1/2 / span 4;
+}
+/* 데스크탑 게시판 */
+.favorite {
+  grid-area: 2/10/3 / span 3;
+}
+/* 데스크탑 게시판 */
+.twitter {
+  grid-area: 2/5/3 / span 5;
 }
