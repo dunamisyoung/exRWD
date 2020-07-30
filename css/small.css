@@ -193,14 +193,6 @@ input[type='search'] {
 }
 
 /* 추천 서적 */
-figure[class^='book__'] {
-  /* background-color: #ddd; */
-}
-
-.responsive {
-  margin: 0 auto;
-  height: 100%;
-}
 
 #book__coverCaption {
   text-align: center;

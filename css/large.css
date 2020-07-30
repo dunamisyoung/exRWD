@@ -8,7 +8,6 @@ body {
 }
 /* 데스크탑 헤더 */
 .appHeader {
-  width: 1000px;
 }
 /* 데스크탑 내비게이션 */
 .appNavigation {
@@ -16,7 +15,6 @@ body {
 }
 /* 데스크탑 메인 콘텐츠 */
 .appMain {
-  width: 1000px;
 }
 /* 데스크탑 푸터 */
 .appFooter {
@@ -30,7 +28,8 @@ body {
 .appHeader,
 .appMain,
 .menu__list {
-  width: 1000px;
+  width: 78.125%;
+  max-width: 1800px;
 }
 
 .appNavigation {
@@ -109,7 +108,6 @@ body {
 /* 데스크탑 메인 콘텐츠 */
 
 .appMain {
-  width: 1000px;
   display: grid;
   grid-template: auto / repeat(12, 1fr);
   grid-gap: 20px;
