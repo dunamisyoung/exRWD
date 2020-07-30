@@ -179,13 +179,53 @@ input[type='search'] {
 .appMain {
   display: flex;
   flex-flow: row wrap;
-  padding: 0 20px;
+  padding: 10px 20px;
 }
 
-.appMain section,
-.appMain article {
+.book,
+.news,
+.board,
+.favorite,
+.twitter {
   width: 100%;
-  height: 10vh;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* 추천 서적 */
+figure[class^='book__'] {
+  /* background-color: #ddd; */
+}
+
+.responsive {
+  margin: 0 auto;
+  height: 100%;
+}
+
+#book__coverCaption {
+  text-align: center;
+}
+
+.book__info,
+.book__info dl,
+.book__info dt,
+.book__info dd {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.book__info dt {
+  display: inline-block;
+}
+
+.book__info dd {
+  display: inline-block;
+}
+
+.themeGreen {
+  width: 100%;
+  display: block;
 }
 
 /* 모바일 푸터 */
