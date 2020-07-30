@@ -14,7 +14,7 @@ function demoWebCafeUI() {
   var menuLinks = null;
 
   // UI 인터랙션 초기화
-  var init = function() {
+  var init = function () {
     // 문서 객체를 찾아 지역 변수에 참조하는 함수 실행
     findDomNode();
     // 윈도우 너비가 변경되면 처리 될 이벤트 핸들러 연결
@@ -24,7 +24,7 @@ function demoWebCafeUI() {
   };
 
   // 문서 객체를 찾아 참조하는 함수
-  var findDomNode = function() {
+  var findDomNode = function () {
     appNavigation = document.querySelector('.appNavigation');
     buttonBurger = appNavigation.querySelector('.buttonBurger');
     menuList = appNavigation.querySelector('.menu__list');
@@ -33,45 +33,44 @@ function demoWebCafeUI() {
   };
 
   // 장치 너비를 확인하여 mobile, desktop 모드를 감지하는 함수
-  var getDeviceMode = function() {
+  var getDeviceMode = function () {
     var currentMode = breakpoint < window.innerWidth ? 'desktop' : 'mobile';
     if (deviceMode === currentMode) {
       return 'same';
-    }
-    else {
+    } else {
       deviceMode = currentMode;
     }
     return deviceMode;
   };
 
   // 버거 버튼에 이벤트 추가하는 함수
-  var addEventButtonBugger = function() {
+  var addEventButtonBugger = function () {
     buttonBurger.addEventListener('click', handleSlideToggle);
   };
 
   // 버거 버튼에 이벤트 제거하는 함수
-  var removeEventButtonBugger = function() {
+  var removeEventButtonBugger = function () {
     buttonBurger.removeEventListener('click', handleSlideToggle);
   };
 
   // 메뉴 리스트에 트랜지션 추가하는 함수
-  var addTransitionMenuList = function() {
+  var addTransitionMenuList = function () {
     menuList.style.transition = 'all 0.3s ease';
   };
 
   // 메뉴 리스트에 트랜지션 제거하는 함수
-  var removeTransitionMenuList = function() {
+  var removeTransitionMenuList = function () {
     menuList.style.transition = null;
   };
 
   // 메뉴 리스트 슬라이드 인 함수
-  var slideIn = function() {
+  var slideIn = function () {
     // 상태 업데이트
     isSlideIn = true;
 
     // 앱 내비게이션 활성화
     menuList.removeAttribute('hidden');
-    window.setTimeout(function() {
+    window.setTimeout(function () {
       appNavigation.classList.add('isAct');
     }, 100);
 
@@ -95,13 +94,13 @@ function demoWebCafeUI() {
   };
 
   // 메뉴 리스트 슬라이드 아웃 함수
-  var slideOut = function() {
+  var slideOut = function () {
     // 상태 업데이트
     isSlideIn = false;
 
     // 앱 내비게이션 비 활성화
     appNavigation.classList.remove('isAct');
-    window.setTimeout(function() {
+    window.setTimeout(function () {
       menuList.setAttribute('hidden', true);
     }, 300);
 
@@ -118,7 +117,7 @@ function demoWebCafeUI() {
   };
 
   // 클래스 추가 유틸리티 함수
-  var addClass = function(target, className) {
+  var addClass = function (target, className) {
     if ('length' in target) {
       for (var i = 0, l = target.length; i < l; ++i) {
         target[i].classList.add(className);
@@ -128,24 +127,23 @@ function demoWebCafeUI() {
   };
 
   // 클래스 제거 유틸리티 함수
-  var removeClass = function(target, className) {
+  var removeClass = function (target, className) {
     if ('length' in target) {
       for (var i = 0, l = target.length; i < l; ++i) {
         target[i].classList.remove(className);
       }
-    }
-    else {
+    } else {
       target.classList.remove(className);
     }
   };
 
   // 보임, 안 보임 유무를 반환하는 유틸리티 함수
-  var isVisible = function(target) {
+  var isVisible = function (target) {
     return target.offsetParent !== null ? true : false;
   };
 
   // 모바일 설정 함수
-  var settingMobile = function() {
+  var settingMobile = function () {
     addEventButtonBugger();
     addTransitionMenuList();
 
@@ -167,7 +165,7 @@ function demoWebCafeUI() {
   };
 
   // 데스크탑 설정 함수
-  var settingDesktop = function() {
+  var settingDesktop = function () {
     removeEventButtonBugger();
     removeTransitionMenuList();
 
@@ -180,7 +178,7 @@ function demoWebCafeUI() {
       // 설정
       item.classList.add('icon-star');
       link.addEventListener('click', handlePreventBrowserAction);
-      link.setAttribute('role', 'presentation');
+      link.setAttribute('role', 'none');
       link.removeAttribute('aria-haspopup');
       link.removeAttribute('aria-pressed');
       link.removeAttribute('aria-expanded');
@@ -188,7 +186,7 @@ function demoWebCafeUI() {
   };
 
   // 창 너비를 감지하여 아이콘 모드 변경을 처리하는 함수
-  var handleWindowResize = function(e) {
+  var handleWindowResize = function (e) {
     switch (getDeviceMode()) {
       case 'mobile':
         settingMobile();
@@ -202,22 +200,21 @@ function demoWebCafeUI() {
   };
 
   // 슬라이드 토글 처리 함수
-  var handleSlideToggle = function(e) {
+  var handleSlideToggle = function (e) {
     // 키보드 이벤트
     if (e.type === 'keydown') {
       if (e.keyCode === 27) {
         slideOut();
         buttonBurger.focus();
       }
-    }
-    else {
+    } else {
       e.stopPropagation();
       isSlideIn ? slideOut() : slideIn();
     }
   };
 
   // 모바일 내비게이션 메뉴 하위 항목 펼침 함수
-  var handleExpandSubLink = function(e) {
+  var handleExpandSubLink = function (e) {
     e.preventDefault();
     e.stopPropagation();
 
@@ -231,7 +228,7 @@ function demoWebCafeUI() {
   };
 
   // 모바일 내비게이션 메뉴 클릭 시 버튼이 눌러진 상태와 하위 메뉴가 펼쳐진 상태를 변경하는 함수
-  var handleButtonState = function(e) {
+  var handleButtonState = function (e) {
     var _this = this;
     var links = menuList.querySelectorAll('.menu__link');
 
@@ -240,8 +237,7 @@ function demoWebCafeUI() {
       if (link === _this) {
         _this.setAttribute('aria-pressed', 'true');
         _this.setAttribute('aria-expanded', 'true');
-      }
-      else {
+      } else {
         link.setAttribute('aria-pressed', false);
         link.setAttribute('aria-expanded', false);
       }
@@ -263,25 +259,24 @@ function demoWebCafeUI() {
   // };
 
   // 브라우저 기본 동작 무시 함수
-  var handlePreventBrowserAction = function(e) {
+  var handlePreventBrowserAction = function (e) {
     e.preventDefault();
     e.stopPropagation();
   };
 
   // 마지막 링크 요소에서 포커스 순환 이동 처리 함수
-  var handleKeyDownLastLink = function(e) {
+  var handleKeyDownLastLink = function (e) {
     if (!e.shiftKey && e.keyCode === 9) {
       var subMenu = this.parentNode.querySelector('.menu__subMenu');
       // 서브 메뉴가 펼쳐지지 않은 상태일 경우
       if (!isVisible(subMenu)) {
         e.preventDefault();
         buttonBurger.focus();
-      }
-      else {
+      } else {
         // 서브 메뉴가 펼쳐진 상태일 경우
         var subLinks = subMenu.querySelectorAll('a');
         var lastSubLink = subLinks[subLinks.length - 1];
-        lastSubLink.addEventListener('keydown', function(e) {
+        lastSubLink.addEventListener('keydown', function (e) {
           e.preventDefault();
           e.keyCode === 9 && buttonBurger.focus();
         });
@@ -290,7 +285,7 @@ function demoWebCafeUI() {
   };
 
   // 버튼 버그의 shift + tab 키를 제어하는 함수
-  var handleShiftTabButtonBurger = function(e) {
+  var handleShiftTabButtonBurger = function (e) {
     if (isSlideIn && e.shiftKey && e.keyCode === 9) {
       e.preventDefault();
       menuLinks[menuLinks.length - 1].focus();
