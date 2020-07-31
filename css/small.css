@@ -219,6 +219,12 @@ input[type='search'] {
   width: 100%;
   display: block;
 }
+/* 모바일 인기사이트 */
+
+.favorite__list a:hover::before,
+.favorite__list a:focus::before {
+  left: 10px;
+}
 
 /* 모바일 푸터 */
 .appFooter {

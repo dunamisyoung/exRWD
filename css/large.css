@@ -30,6 +30,7 @@ body {
 .menu__list {
   width: 78.125%;
   max-width: 1800px;
+  min-width: 1000px;
 }
 
 .appNavigation {
@@ -129,6 +130,7 @@ body {
   max-width: 100%;
   height: auto;
 }
+
 /* 데스크탑 새소식 */
 .news {
   grid-area: 1/5/2 / span 8;
@@ -145,4 +147,9 @@ body {
 /* 데스크탑 게시판 */
 .twitter {
   grid-area: 2/5/3 / span 5;
+}
+
+.favorite__list a:hover::before,
+.favorite__list a:focus::before {
+  right: -10px;
 }

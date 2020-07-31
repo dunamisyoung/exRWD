@@ -409,9 +409,6 @@ input[type='search'] {
   font-weight: 700;
 }
 
-.news {
-  /* background-color: green; */
-}
 .board {
   /* background-color: dodgerblue; */
 }
@@ -420,6 +417,130 @@ input[type='search'] {
 }
 .twitter {
   /* background-color: palegoldenrod; */
+}
+
+/* 공통새소식 */
+
+video.responsive {
+  width: 100%;
+}
+
+.news__videoContainer {
+  margin: 15px 20px;
+}
+
+.news__date {
+  display: block;
+  text-align: right;
+  margin: 1em 0;
+}
+
+.news {
+  /* background-color: pink; */
+}
+
+/* 공통 새소식 - iframe */
+.iframeContainer {
+  position: relative;
+  width: 100%;
+  height: 0 !important;
+}
+
+.iframe4To3 {
+  padding-top: 75%;
+}
+
+.iframe16To9 {
+  padding-top: 56.25%;
+  background-color: #ddd;
+}
+
+.iframe21To9 {
+  padding-top: 42.857142857142855%;
+}
+
+.iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* 공통 게시판 */
+.board {
+  /* background-color: yellow; */
+  position: relative;
+}
+
+.board__list {
+  /* background-color: pink; */
+  margin: 15px 0;
+  padding-left: 20px;
+}
+
+.board__list li {
+  /* background-color: skyblue; */
+  margin: 10px 0;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.board__list a {
+  /* width: calc(100% - 120px); */
+  /* white-space: nowrap; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+  margin: 0 10px 0 5px;
+}
+
+.board__more {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 10px;
+  /* background-color: lime; */
+}
+
+/* 공통 인기사이트 */
+.favorite__list {
+  margin: 15px 0;
+  padding-left: 20px;
+}
+
+.favorite__list li {
+  counter-increment: number;
+  margin: 10px 0;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.favorite__list li::before {
+  content: counter(number);
+  color: #fff;
+  background-color: #eea60a;
+  padding: 2px 6px;
+  margin-right: 5px;
+  border-radius: 50%;
+}
+
+.favorite__list a {
+  position: relative;
+  flex-grow: 1;
+}
+
+.favorite__list a:hover::before,
+.favorite__list a:focus::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 1em;
+  background-color: #eea60a;
+  border: 1px solid #000;
+  padding: 5px;
+  z-index: 100;
+  color: #fff;
+  box-shadow: 2px 2px 0 0 #000;
 }
 
 /* 공통 푸터 */

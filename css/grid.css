@@ -24,7 +24,7 @@
 @media screen and (min-width: 1000px) {
   /* 데스크탑 그리드 시스템 */
   .gridSystem.isActive {
-    width: 1000px;
+    width: 78.125%;
     max-width: 1800px;
     left: 50%;
     transform: translateX(-50%);
