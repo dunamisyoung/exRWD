@@ -153,3 +153,17 @@ body {
 .favorite__list a:focus::before {
   right: -10px;
 }
+
+.address,
+.copyright {
+  text-align: center;
+}
+
+.address span {
+  display: inline-block;
+}
+/* 데스크탑 푸터 */
+
+.appFooter {
+  text-align: center;
+}

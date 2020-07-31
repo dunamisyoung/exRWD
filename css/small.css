@@ -226,6 +226,16 @@ input[type='search'] {
   left: 10px;
 }
 
+/* 공통 트위터 */
+.twitter__userProfile {
+  text-align: right;
+}
+
 /* 모바일 푸터 */
 .appFooter {
+  line-height: 2;
+}
+
+.appFooter span {
+  display: block;
 }
